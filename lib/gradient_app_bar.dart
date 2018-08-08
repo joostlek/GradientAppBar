@@ -90,10 +90,10 @@ class _ToolbarContainerLayout extends SingleChildLayoutDelegate {
 ///
 /// See also:
 ///
-///  * [Scaffold], which displays the [AppBar] in its [Scaffold.appBar] slot.
-///  * [SliverAppBar], which uses [AppBar] to provide a flexible app bar that
+///  * [Scaffold], which displays the [GradientAppBar] in its [Scaffold.appBar] slot.
+///  * [SliverAppBar], which uses [GradientAppBar] to provide a flexible app bar that
 ///    can be used in a [CustomScrollView].
-///  * [TabBar], which is typically placed in the [bottom] slot of the [AppBar]
+///  * [TabBar], which is typically placed in the [bottom] slot of the [GradientAppBar]
 ///    if the screen has multiple pages arranged in tabs.
 ///  * [IconButton], which is used with [actions] to show buttons on the app bar.
 ///  * [PopupMenuButton], to show a popup menu on the app bar, via [actions].
