@@ -110,8 +110,8 @@ class GradientAppBar extends StatefulWidget implements PreferredSizeWidget {
     this.flexibleSpace,
     this.bottom,
     this.elevation = 4.0,
-    this.backgroundColorStart,
-    this.backgroundColorEnd,
+    this.colors,
+    this.stops,
     this.brightness,
     this.iconTheme,
     this.textTheme,
@@ -200,8 +200,8 @@ class GradientAppBar extends StatefulWidget implements PreferredSizeWidget {
   /// along with [brightness], [iconTheme], [textTheme].
   ///
   /// Defaults to [ThemeData.primaryColor].
-  final Color backgroundColorStart;
-  final Color backgroundColorEnd;
+  final List<Color> colors;
+  final List<double> stops;
 
   /// The brightness of the app bar's material. Typically this is set along
   /// with [backgroundColor], [iconTheme], [textTheme].
@@ -466,13 +466,10 @@ class _GradientAppBarState extends State<GradientAppBar> {
           child: Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                  colors: [
-                    widget.backgroundColorStart ?? themeData.primaryColor,
-                    widget.backgroundColorEnd ?? themeData.accentColor,
-                  ],
+                  colors: widget.colors,
                   begin: FractionalOffset(0.0, 0.0),
                   end: FractionalOffset(1.0, 0.0),
-                  stops: [0.0, 1.0],
+                  stops: widget.stops,
                   tileMode: TileMode.clamp),
             ),
             child: appBar,
@@ -545,8 +542,8 @@ class _SliverGradientAppBarDelegate extends SliverPersistentHeaderDelegate {
     @required this.bottom,
     @required this.elevation,
     @required this.forceElevated,
-    @required this.backgroundColorStart,
-    @required this.backgroundColorEnd,
+    @required this.colors,
+    @required this.stops,
     @required this.brightness,
     @required this.iconTheme,
     @required this.textTheme,
@@ -570,8 +567,8 @@ class _SliverGradientAppBarDelegate extends SliverPersistentHeaderDelegate {
   final PreferredSizeWidget bottom;
   final double elevation;
   final bool forceElevated;
-  final Color backgroundColorStart;
-  final Color backgroundColorEnd;
+  final <Color>[] colors;
+  final <double[] stops;
   final Brightness brightness;
   final IconThemeData iconTheme;
   final TextTheme textTheme;
@@ -625,8 +622,8 @@ class _SliverGradientAppBarDelegate extends SliverPersistentHeaderDelegate {
                 (pinned && shrinkOffset > maxExtent - minExtent)
             ? elevation ?? 4.0
             : 0.0,
-        backgroundColorStart: backgroundColorStart,
-        backgroundColorEnd: backgroundColorEnd,
+        colors: colors,
+        stops: stops,
         brightness: brightness,
         iconTheme: iconTheme,
         textTheme: textTheme,
@@ -651,8 +648,8 @@ class _SliverGradientAppBarDelegate extends SliverPersistentHeaderDelegate {
         bottom != oldDelegate.bottom ||
         _bottomHeight != oldDelegate._bottomHeight ||
         elevation != oldDelegate.elevation ||
-        backgroundColorStart != oldDelegate.backgroundColorStart ||
-        backgroundColorEnd != oldDelegate.backgroundColorEnd ||
+        colors != oldDelegate.colors ||
+        stops != oldDelegate.stops ||
         brightness != oldDelegate.brightness ||
         iconTheme != oldDelegate.iconTheme ||
         textTheme != oldDelegate.textTheme ||
@@ -737,8 +734,8 @@ class SliverGradientAppBar extends StatefulWidget {
     this.bottom,
     this.elevation,
     this.forceElevated = false,
-    this.backgroundColorStart,
-    this.backgroundColorEnd,
+    this.colors,
+    this.stops,
     this.brightness,
     this.iconTheme,
     this.textTheme,
@@ -857,8 +854,8 @@ class SliverGradientAppBar extends StatefulWidget {
   /// along with [brightness], [iconTheme], [textTheme].
   ///
   /// Defaults to [ThemeData.primaryColor].
-  final Color backgroundColorStart;
-  final Color backgroundColorEnd;
+  final List<Color> colors;
+  final List<double> stops;
 
   /// The brightness of the app bar's material. Typically this is set along
   /// with [backgroundColor], [iconTheme], [textTheme].
@@ -995,8 +992,8 @@ class _SliverGradientAppBarState extends State<SliverGradientAppBar>
           bottom: widget.bottom,
           elevation: widget.elevation,
           forceElevated: widget.forceElevated,
-          backgroundColorStart: widget.backgroundColorStart,
-          backgroundColorEnd: widget.backgroundColorEnd,
+          colors: widget.colors,
+          stops: widget.stops,
           brightness: widget.brightness,
           iconTheme: widget.iconTheme,
           textTheme: widget.textTheme,

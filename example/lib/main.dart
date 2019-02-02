@@ -41,8 +41,12 @@ class _MyHomePageState extends State<MyHomePage> {
       child: new Scaffold(
         appBar: new GradientAppBar(
           title: new Text(widget.title),
-          backgroundColorStart: Colors.blue,
-          backgroundColorEnd: Colors.red,
+          colors: [
+            Color(0xff4598F7),
+            Color(0xff7aa5f8),
+            Color(0xffC2b6fa),
+          ],
+          stops: [0.2, 0.6, 1],
           bottom: TabBar(tabs: <Widget>[
             Tab(
               icon: Icon(Icons.home),
