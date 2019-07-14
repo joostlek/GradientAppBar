@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
-      theme: new ThemeData(
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -22,7 +22,7 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -38,11 +38,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 2,
-      child: new Scaffold(
-        appBar: new GradientAppBar(
-          title: new Text(widget.title),
-          backgroundColorStart: Colors.blue,
-          backgroundColorEnd: Colors.red,
+      child: Scaffold(
+        appBar: GradientAppBar(
+          title: Text(widget.title),
+          gradient: LinearGradient(colors: [Colors.red, Colors.purple]),
           bottom: TabBar(tabs: <Widget>[
             Tab(
               icon: Icon(Icons.home),
@@ -54,24 +53,24 @@ class _MyHomePageState extends State<MyHomePage> {
             )
           ]),
         ),
-        body: new Center(
-          child: new Column(
+        body: Center(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              new Text(
+              Text(
                 'You have pushed the button this many times:',
               ),
-              new Text(
+              Text(
                 '$_counter',
                 style: Theme.of(context).textTheme.display1,
               ),
             ],
           ),
         ),
-        floatingActionButton: new FloatingActionButton(
+        floatingActionButton: FloatingActionButton(
           onPressed: _incrementCounter,
           tooltip: 'Increment',
-          child: new Icon(Icons.add),
+          child: Icon(Icons.add),
           backgroundColor: Colors.red,
         ),
       ),

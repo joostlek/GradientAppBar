@@ -10,7 +10,7 @@ description: A new Flutter project.
 version: 1.0.0+1
 
 dependencies:
-  gradient_app_bar: ^0.0.1
+  gradient_app_bar: ^0.1.0
   flutter:
     sdk: flutter
 
