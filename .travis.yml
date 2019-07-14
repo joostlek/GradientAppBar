@@ -22,5 +22,5 @@ cache:
 deploy:
   provider: script
   script: ./tool/publish.sh
-#  on:
-#    branch: master
+  on:
+    branch: test/ci
