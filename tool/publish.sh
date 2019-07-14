@@ -10,5 +10,6 @@ cat <<EOF > ~/.pub-cache/credentials.json
   "expiration":$expiration
 }
 EOF
-
+echo "kek"
+pub -v
 pub publish -f
