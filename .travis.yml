@@ -1,0 +1,28 @@
+sudo: false
+
+language: dart
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - libstdc++6
+    - fonts-droid
+
+install:
+- git clone https://github.com/flutter/flutter.git -b beta
+- ./flutter/bin/flutter doctor
+
+script:
+- ./flutter/bin/flutter test example
+
+cache:
+  directories:
+  - $HOME/.pub-cache
+
+deploy:
+  provider: script
+  script: ./tool/publish.sh
+  on:
+    branch: master
