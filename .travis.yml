@@ -25,4 +25,4 @@ deploy:
   provider: script
   script: ./tool/publish.sh
   on:
-    branch: test/ci
+    branch: master
