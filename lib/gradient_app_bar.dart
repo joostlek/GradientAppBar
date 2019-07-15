@@ -2,11 +2,11 @@ library gradient_app_bar;
 
 import 'dart:math' as math;
 
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_web/foundation.dart';
+import 'package:flutter_web/material.dart';
+import 'package:flutter_web/rendering.dart';
+import 'package:flutter_web/services.dart';
+import 'package:flutter_web/widgets.dart';
 
 const double _kLeadingWidth =
     kToolbarHeight; // So the leading button is square.
@@ -416,7 +416,6 @@ class _GradientAppBarState extends State<GradientAppBar> {
     IconThemeData overallIconTheme =
         widget.iconTheme ?? appBarTheme.iconTheme ?? themeData.primaryIconTheme;
     IconThemeData actionsIconTheme = widget.actionsIconTheme ??
-        appBarTheme.actionsIconTheme ??
         overallIconTheme;
     TextStyle centerStyle = widget.textTheme?.title ??
         appBarTheme.textTheme?.title ??
