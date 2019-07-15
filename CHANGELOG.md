@@ -1,3 +1,7 @@
+## [0.1.3] - 15 Juli 2019
+
+ - Remove obsolete import
+
 ## [0.1.2] - 15 Juli 2019
 
  - Updated description
