@@ -16,5 +16,14 @@ It works just like the normal AppBar. Also with actions, back buttons, titles. S
 
 2. Import it: ```import 'package:gradient_app_bar/gradient_app_bar.dart'```
 
-3. Replace your current AppBar (In the scaffold) to GradientAppBar. Add a backgroundColorStart and a backgroundColorEnd and you have a gradient appbar!
+3. Replace your current AppBar (In the scaffold) to GradientAppBar. 
+
+
+```
+appBar: GradientAppBar(
+    title: Text('Flutter'),
+    gradient: LinearGradient(colors: [Colors.blue, Colors.purple, Colors.red])
+  ),
+```
+
 
