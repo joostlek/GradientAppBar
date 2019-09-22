@@ -8,7 +8,7 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     - libstdc++6
-    - fonts-droid
+    - fonts-droid-fallback
 
 install:
 - git clone https://github.com/flutter/flutter.git -b beta
