@@ -12,7 +12,7 @@ It works just like the normal AppBar. Also with actions, back buttons, titles. S
 
 ## Getting Started
 
-1. Depend on it by adding this to your pubspec.yaml file: ```gradient_app_bar: ^0.0.1```
+1. Depend on it by adding this to your pubspec.yaml file: ```gradient_app_bar: ^0.1.3```
 
 2. Import it: ```import 'package:gradient_app_bar/gradient_app_bar.dart'```
 
