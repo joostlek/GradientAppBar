@@ -590,7 +590,8 @@ class _GradientAppBarState extends State<GradientAppBar> {
             widget.elevation ?? appBarTheme.elevation ?? _defaultElevation,
             shape: widget.shape,
             child: Container(
-              decoration: BoxDecoration(gradient: widget.gradient),
+              //decoration: BoxDecoration(gradient: widget.gradient),
+			  decoration: ShapeDecoration(shape: widget.shape, gradient: widget.gradient, ),
               child: Semantics(
                 explicitChildNodes: true,
                 child: appBar,
