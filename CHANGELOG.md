@@ -1,3 +1,7 @@
+## [0.1.4] - 10 Nov 2020
+
+ - Update nullOk Parameter for flutter 1.23
+
 ## [0.1.3] - 15 Juli 2019
 
  - Remove obsolete import
