@@ -1,6 +1,6 @@
 name: gradient_app_bar
 description: The official AppBar, with a more colorful twist. Add gradients to spice up your application and make it beautiful. This easy to use library makes it easy, and most of all, it is compatible with everything the normal AppBar is compatible with!
-version: 0.1.3
+version: 0.1.4
 author: Joost Lekkerkerker <joostlek@outlook.com>
 homepage: https://github.com/joostlek/GradientAppBar
 
@@ -13,7 +13,8 @@ dev_dependencies:
     sdk: flutter
 
 environment:
-  sdk: '>=1.19.0 <3.0.0'
+  flutter: ">=1.23.0 <2.0.0"
+  sdk: ">=2.10.0 <3.0.0"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec

@@ -404,7 +404,7 @@ class _GradientAppBarState extends State<GradientAppBar> {
     assert(debugCheckHasMaterialLocalizations(context));
     final ThemeData themeData = Theme.of(context);
     final AppBarTheme appBarTheme = AppBarTheme.of(context);
-    final ScaffoldState scaffold = Scaffold.of(context, nullOk: true);
+    final ScaffoldState scaffold = Scaffold.maybeOf(context);
     final ModalRoute<dynamic> parentRoute = ModalRoute.of(context);
 
     final bool hasDrawer = scaffold?.hasDrawer ?? false;
@@ -427,8 +427,8 @@ class _GradientAppBarState extends State<GradientAppBar> {
 
     if (widget.toolbarOpacity != 1.0) {
       final double opacity =
-      const Interval(0.25, 1.0, curve: Curves.fastOutSlowIn)
-          .transform(widget.toolbarOpacity);
+          const Interval(0.25, 1.0, curve: Curves.fastOutSlowIn)
+              .transform(widget.toolbarOpacity);
       if (centerStyle?.color != null)
         centerStyle =
             centerStyle.copyWith(color: centerStyle.color.withOpacity(opacity));
@@ -542,11 +542,11 @@ class _GradientAppBarState extends State<GradientAppBar> {
           widget.bottomOpacity == 1.0
               ? widget.bottom
               : Opacity(
-            opacity:
-            const Interval(0.25, 1.0, curve: Curves.fastOutSlowIn)
-                .transform(widget.bottomOpacity),
-            child: widget.bottom,
-          ),
+                  opacity:
+                      const Interval(0.25, 1.0, curve: Curves.fastOutSlowIn)
+                          .transform(widget.bottomOpacity),
+                  child: widget.bottom,
+                ),
         ],
       );
     }
@@ -587,7 +587,7 @@ class _GradientAppBarState extends State<GradientAppBar> {
         child: Material(
             color: appBarTheme.color ?? themeData.primaryColor,
             elevation:
-            widget.elevation ?? appBarTheme.elevation ?? _defaultElevation,
+                widget.elevation ?? appBarTheme.elevation ?? _defaultElevation,
             shape: widget.shape,
             child: Container(
               decoration: BoxDecoration(gradient: widget.gradient),
@@ -633,8 +633,8 @@ class _FloatingGradientAppBarState extends State<_FloatingGradientAppBar> {
   }
 
   RenderSliverFloatingPersistentHeader _headerRenderer() {
-    return context.ancestorRenderObjectOfType(
-        const TypeMatcher<RenderSliverFloatingPersistentHeader>());
+    return context
+        .findAncestorRenderObjectOfType<RenderSliverFloatingPersistentHeader>();
   }
 
   void _isScrollingListener() {
